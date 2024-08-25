@@ -26,7 +26,7 @@ class handler(BaseHTTPRequestHandler):
                 return
             token=self.path.split("token")[1]
             if token in lots:
-                self.wfile.write(str(lots[token]).encode('utf-8'))
+                self.wfile.write(lots[token].encode('utf-8'))
                 del lots[token]
             else:
                 self.wfile.write("error".encode('utf-8'))
