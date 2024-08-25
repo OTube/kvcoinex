@@ -29,5 +29,14 @@ class handler(BaseHTTPRequestHandler):
                 del lots[token]
             else:
                 self.wfile.write("error".encode('utf-8'))
+        elif op=="checklot":
+            if self.path.count("token")<2:
+                self.wfile.write("forbidden".encode('utf-8'))
+                return
+            token=self.path.split("token")[1]
+            if token in lots:
+                self.wfile.write("yes".encode('utf-8'))
+            else:
+                self.wfile.write("no".encode('utf-8'))
         else:
             self.wfile.write("forbidden".encode('utf-8'))
