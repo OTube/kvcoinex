@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler
-lots=[-1]*1000000
+lots=[-1]*1000
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
