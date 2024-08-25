@@ -15,7 +15,7 @@ class handler(BaseHTTPRequestHandler):
                 self.wfile.write("forbidden".encode('utf-8'))
                 return
             token=self.path.split("token")[1]
-            if len(token)!=6 not token.isdigit():
+            if len(token)!=6 and not token.isdigit():
                 self.wfile.write("forbidden".encode('utf-8'))
                 return
             if self.path.count("value")<2:
@@ -34,7 +34,7 @@ class handler(BaseHTTPRequestHandler):
                 self.wfile.write("forbidden".encode('utf-8'))
                 return
             token=self.path.split("token")[1]
-            if len(token)!=6 not token.isdigit():
+            if len(token)!=6 and not token.isdigit():
                 self.wfile.write("forbidden".encode('utf-8'))
                 return
             if lots[int(token)]!=-1:
