@@ -38,7 +38,7 @@ class handler(BaseHTTPRequestHandler):
                 self.wfile.write("forbidden".encode('utf-8'))
                 return
             if lots[int(token)]!=-1:
-                self.wfile.write(lots[token].encode('utf-8'))
+                self.wfile.write(str(lots[token]).encode('utf-8'))
                 lots[int(token)]=-1
             else:
                 self.wfile.write("error".encode('utf-8'))
