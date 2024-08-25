@@ -29,10 +29,5 @@ class handler(BaseHTTPRequestHandler):
                 del lots[token]
             else:
                 self.wfile.write("error".encode('utf-8'))
-        elif op=="checkstatus":
-            if token in lots:
-                self.wfile.write("yes".encode('utf-8'))
-            else:
-                self.wfile.write("no".encode('utf-8'))
         else:
             self.wfile.write("forbidden".encode('utf-8'))
