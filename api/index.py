@@ -8,4 +8,7 @@ class handler(BaseHTTPRequestHandler):
         if self.path.count("op")<2:
             self.wfile.write("forbidden".encode('utf-8'))
             return
-        
+        if self.path.count("op")<2:
+            self.wfile.write("forbidden".encode('utf-8'))
+            return
+        op=self.path.split("op")[1]
