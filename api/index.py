@@ -32,7 +32,7 @@ class handler(BaseHTTPRequestHandler):
                 return
             token=self.path.split("token")[1]
             if len(token)==6 and token.isdigit() and lots[int(token)]!=-1:
-                self.wfile.write(str(lots[token]).encode('utf-8'))
+                self.wfile.write(str(lots[int(token)]).encode('utf-8'))
                 lots[int(token)]=-1
             else:
                 self.wfile.write("error".encode('utf-8'))
