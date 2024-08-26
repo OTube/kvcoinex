@@ -30,9 +30,6 @@ class handler(BaseHTTPRequestHandler):
             if self.path.count("token")<2:
                 self.wfile.write("forbidden".encode('utf-8'))
                 return
-            if not token.isdigit():
-                self.wfile.write("forbidden".encode('utf-8'))
-                return
             token=self.path.split("token")[1]
             if len(token)!=6 and not token.isdigit():
                 self.wfile.write("forbidden".encode('utf-8'))
